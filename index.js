@@ -45,6 +45,16 @@ app.delete('/koders/:name', (req, res)=>{
     });
 })
 
+// borrando elementos
+app.delete('/koders', (req, res)=>{
+    dbkoders = [];
+    updateKoders( dbkoders );
+    res.json({
+        message: 'koder deleted',
+        dbkoders
+    });
+})
+
 
 app.listen( 3000, ()=>{
     console.log('Servidor iniciado en puerto 3000');
